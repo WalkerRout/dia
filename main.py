@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-from sklearn import preprocessing as pr
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
@@ -103,7 +102,7 @@ def logisticAnalysis(df):
     
     # Predicted values given the test values
     y_predict = model.predict(X_test)
-
+    
     '''
     # Compare the found values in a dataframe
     y_actual = y.iloc[X_test.index]
