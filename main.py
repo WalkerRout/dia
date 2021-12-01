@@ -111,7 +111,6 @@ def logisticAnalysis(df):
     '''
 
     # Model score and confusion matrix
-
     model_score = model.score(X_test, y_test)
     mat = metrics.confusion_matrix(y_test, y_predict) # First vector is false positive, second vector is false negative
 
