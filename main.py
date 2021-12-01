@@ -124,7 +124,6 @@ if __name__ == "__main__":
     
     logA["comparison"].to_csv("Resources/comparison.csv")
 
-    print(logA["score"]) # print the model score
-    print(logA["confusion_matrix"]) # print the confusion matrix of the actual vs predicted values
-    print(logA["comparison"])
+    print("Model Score (% Accuracy): ", logA["score"]) # print the model score
+    print("Confusion Matrix: ", logA["confusion_matrix"]) # print the confusion matrix of the actual vs predicted values
 
