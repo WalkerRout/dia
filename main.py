@@ -102,19 +102,18 @@ def logisticAnalysis(df):
     
     # Predicted values given the test values
     y_predict = model.predict(X_test)
-    
-    '''
+    y_predict_proba = model.predict_proba(X_test)[:,1]
+
     # Compare the found values in a dataframe
     y_actual = y.iloc[X_test.index]
     y_actual = y_actual.squeeze()
-    comparison = pd.DataFrame(data={"Actual Outcome" : y_actual, "Pred. Outcome" : list(y_predict)})
-    '''
+    comparison = pd.DataFrame(data={"Actual Outcome" : y_actual, "Pred. Outcome" : y_predict, "Percentage" : y_predict_proba})
 
     # Model score and confusion matrix
     model_score = model.score(X_test, y_test)
     mat = metrics.confusion_matrix(y_test, y_predict) # First vector is false positive, second vector is false negative
 
-    return {"score" : model_score, "confusion_matrix" : mat} # Return a dictionary of general values, can be modified in the future
+    return {"score" : model_score, "confusion_matrix" : mat, "comparison" : comparison} # Return a dictionary of general values, can be modified in the future
 
 
 
@@ -122,7 +121,10 @@ if __name__ == "__main__":
 
     data = setupData("Resources/pima-first-nations-diabetes.csv") # Pass in path to Pima dataset as argument
     logA = logisticAnalysis(data) # Run regression analysis on data
+    
+    logA["comparison"].to_csv("Resources/comparison.csv")
 
     print(logA["score"]) # print the model score
     print(logA["confusion_matrix"]) # print the confusion matrix of the actual vs predicted values
+    print(logA["comparison"])
 
