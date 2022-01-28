@@ -1,4 +1,4 @@
-# Same dataset can be used with my new, self implemented logistic regression model visible here: https://github.com/WalkerRout/MultipleLogisticRegression
+# Same dataset can be used with my new, self implemented logistic regression model written from scratch visible here: https://github.com/WalkerRout/MultipleLogisticRegression
 
 
 # Diabetes
