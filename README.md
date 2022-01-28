@@ -1,3 +1,6 @@
+# Same dataset can be used with my new, self implemented logistic regression model visible here: https://github.com/WalkerRout/MultipleLogisticRegression
+
+
 # Diabetes
 
 ### This script uses the Pima First Nations dataset to create a model to predict whether or not an individual will develop Diabetes Mellitus Type 2 within a five year time span
